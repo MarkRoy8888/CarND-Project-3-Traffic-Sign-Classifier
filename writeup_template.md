@@ -15,12 +15,7 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
-## Rubric Points
-
 ---
-### Writeup / README
-
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
 ### Data Set Summary & Exploration
 
@@ -30,12 +25,20 @@ I used the pandas library to calculate summary statistics of the traffic
 signs data set:
 
 
-*Number of training examples = 34799
-*Number of testing examples = 12630
-*Image data shape = (32, 32, 3)
-*Number of classes = 43
+* Number of training examples = 34799
+* Number of testing examples = 12630
+* Image data shape = (32, 32, 3)
+* Number of classes = 43
 
 #### 2. Include an exploratory visualization of the dataset.
+
+
+* Check the distributed of train, vaild and test. 
+* I think it is ok for training.
+
+
+
+---
 
 ### Design and Test a Model Architecture
 
@@ -45,7 +48,6 @@ As a first step, I decided to convert the images to grayscale because ...
 
 1.I just process the image normalize the images for learning speed.
 2.I didn't grayscaling, because in my opinion the sign's color is useful.
-3.Check the distributed of train, vaild and test. 
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
