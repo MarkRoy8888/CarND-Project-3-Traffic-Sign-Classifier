@@ -2,8 +2,7 @@
 
 ## Writeup
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
+## Mark's project 3 Traffic_Sign_Classifier
 ---
 
 **Build a Traffic Sign Recognition Project**
@@ -16,20 +15,7 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
-
-[//]: # (Image References)
-
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
-
 ## Rubric Points
-### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
 ### Writeup / README
@@ -45,17 +31,13 @@ You're reading it! and here is a link to my [project code](https://github.com/ud
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is ?
-* The size of the validation set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
+
+*Number of training examples = 34799
+*Number of testing examples = 12630
+*Image data shape = (32, 32, 3)
+*Number of classes = 43
 
 #### 2. Include an exploratory visualization of the dataset.
-
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
-
-![alt text][image1]
 
 ### Design and Test a Model Architecture
 
@@ -63,64 +45,74 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 As a first step, I decided to convert the images to grayscale because ...
 
-Here is an example of a traffic sign image before and after grayscaling.
-
-![alt text][image2]
-
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
+1.I just process the image normalize the images for learning speed.
+2.I didn't grayscaling, because in my opinion the sign's color is useful.
+3.Check the distributed of train, vaild and test. 
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
+Model: "sequential_3"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_15 (Conv2D)           (None, 32, 32, 64)        4864      
+_________________________________________________________________
+max_pooling2d_9 (MaxPooling2 (None, 16, 16, 64)        0         
+_________________________________________________________________
+conv2d_16 (Conv2D)           (None, 16, 16, 128)       73856     
+_________________________________________________________________
+conv2d_17 (Conv2D)           (None, 16, 16, 128)       147584    
+_________________________________________________________________
+max_pooling2d_10 (MaxPooling (None, 8, 8, 128)         0         
+_________________________________________________________________
+conv2d_18 (Conv2D)           (None, 8, 8, 256)         295168    
+_________________________________________________________________
+conv2d_19 (Conv2D)           (None, 8, 8, 256)         590080    
+_________________________________________________________________
+max_pooling2d_11 (MaxPooling (None, 4, 4, 256)         0         
+_________________________________________________________________
+flatten_3 (Flatten)          (None, 4096)              0         
+_________________________________________________________________
+dense_9 (Dense)              (None, 128)               524416    
+_________________________________________________________________
+dropout_6 (Dropout)          (None, 128)               0         
+_________________________________________________________________
+dense_10 (Dense)             (None, 64)                8256      
+_________________________________________________________________
+dropout_7 (Dropout)          (None, 64)                0         
+_________________________________________________________________
+dense_11 (Dense)             (None, 43)                2795      
+=================================================================
+Total params: 1,647,019
+Trainable params: 1,647,019
+Non-trainable params: 0
+_________________________________________________________________
 
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+* I use the a minst model sample as base.
+* And change some parameter. 
+* the result is ok for me.
+* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+ 
+
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+the best result
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+Epoch 19/20
+1088/1088 [==============================] - 122s 112ms/step - loss: 0.0615 - accuracy: 0.9860 - val_loss: 0.7114 - val_accuracy: 0.9512
+
+the test result
+
+395/395 [==============================] - 9s 24ms/step - loss: 0.4717 - accuracy: 0.9162 Test Accuracy = 0.916
+
 
 ### Test a Model on New Images
 
@@ -128,44 +120,31 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+1/1 [==============================] - 0s 135ms/step - loss: 10.6423 - accuracy: 0.4000  Test Accuracy = 0.400
 
-The first image might be difficult to classify because ...
+![alt-text-1](out_sign/images_1.png "images_1")
+![alt-text-1](out_sign/images_2.png "images_2")
+![alt-text-1](out_sign/images_3.png "images_3")
+![alt-text-1](out_sign/images_4.png "images_4")
+![alt-text-1](out_sign/images_5.png "images_5")
+
+Before learning I think the speed limit 60 is hard to told between 50 and 60, and image3 is difficult to distinguish from many sign.
+
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
-Here are the results of the prediction:
+![alt-text-1](readme/image1_result.png "images_1")
+![alt-text-1](readme/image2_result.png "images_2")
+![alt-text-1](readme/image3_result.png "images_3")
+![alt-text-1](readme/image4_result.png "images_4")
+![alt-text-1](readme/image5_result.png "images_5")
 
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+the new sign will different from country, incluing color, shape, type and content, so the result is not good.
 
-
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
 
 
-For the second image ... 
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 
