@@ -54,9 +54,10 @@ As a first step, I decided to convert the images to grayscale because ...
 
 My final model consisted of the following layers:
 
+
 Model: "sequential_3"
 _________________________________________________________________
-Layer (type)                 Output Shape              Param #   
+Layer (type)                 Output Shape              Param 
 =================================================================
 conv2d_15 (Conv2D)           (None, 32, 32, 64)        4864      
 _________________________________________________________________
@@ -89,7 +90,7 @@ dense_11 (Dense)             (None, 43)                2795
 Total params: 1,647,019
 Trainable params: 1,647,019
 Non-trainable params: 0
-_________________________________________________________________
+
 
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
