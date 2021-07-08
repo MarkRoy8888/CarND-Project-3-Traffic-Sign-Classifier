@@ -1,4 +1,4 @@
-# **Traffic Sign Recognition** 
+# **Traffic Sign Recognition**
 
 ## Writeup
 
@@ -18,7 +18,8 @@ The goals / steps of this project are the following:
 ---
 
 ### Data Set Summary & Exploration
-
+#### 0.
+In this project, you will use what you've learned about deep neural networks and convolutional neural networks to classify traffic signs. You will train and validate a model so it can classify traffic sign images using the German Traffic Sign Dataset. After the model is trained, you will then try out your model on images of German traffic signs that you find on the web.
 #### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
 I used the pandas library to calculate summary statistics of the traffic
@@ -33,7 +34,7 @@ signs data set:
 #### 2. Include an exploratory visualization of the dataset.
 
 
-* Check the distributed of train, vaild and test. 
+* Check the distributed of train, vaild and test.
 * I think it is ok for training.
 
 
@@ -57,7 +58,7 @@ My final model consisted of the following layers:
 
 Model: "sequential_3"
 _________________________________________________________________
-Layer (type)                 Output Shape              Param 
+Layer (type)                 Output Shape              Param
 =================================================================
 conv2d_15 (Conv2D)           (None, 32, 32, 64)        4864      
 _________________________________________________________________
@@ -96,10 +97,10 @@ Non-trainable params: 0
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 * I use the a minst model sample as base.
-* And change some parameter. 
+* And change some parameter.
 * the result is ok for me.
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+
 
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
@@ -144,9 +145,3 @@ the new sign will different from country, incluing color, shape, type and conten
 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
-
-
-
-
-
-
