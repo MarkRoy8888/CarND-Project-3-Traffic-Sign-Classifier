@@ -51,7 +51,7 @@ signs data set:
 As a first step, I decided to convert the images to grayscale because ...
 
 1.I just process the image normalize the images for learning speed.
-2.I didn't grayscaling, because in my opinion the sign's color is useful.
+2.I didn't gray-scaling, because in my opinion the sign's color is useful.
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
@@ -144,7 +144,7 @@ Before learning I think the speed limit 60 is hard to told between 50 and 60, an
 ![alt-text-1](readme/image4_result.png "images_4")
 ![alt-text-1](readme/image5_result.png "images_5")
 
-the new sign will different from country, incluing color, shape, type and content, so the result is not good.
+the new sign will different from country, including color, shape, type and content, so the result is not good.
 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
