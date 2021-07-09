@@ -144,7 +144,8 @@ Before learning I think the speed limit 60 is hard to told between 50 and 60, an
 ![alt-text-1](readme/image4_result.png "images_4")
 ![alt-text-1](readme/image5_result.png "images_5")
 
-the new sign will different from country, including color, shape, type and content, so the result is not good.
+The outside new sign will different from country, including color, shape, type and content, so the result is not good.
+In real world, traffic sign are limited. when the database get more and then finish the problem and get better performance.
 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
