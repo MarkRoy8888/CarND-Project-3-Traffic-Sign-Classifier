@@ -1,8 +1,7 @@
 # **Traffic Sign Recognition**
 
-## Writeup
 
-## Mark's project 3 Traffic_Sign_Classifier
+## Project 3 Traffic_Sign_Classifier
 ---
 
 **Build a Traffic Sign Recognition Project**
@@ -15,6 +14,7 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
+
 ---
 
 ### Data Set Summary & Exploration
@@ -22,12 +22,10 @@ The goals / steps of this project are the following:
 In this project, you will use what you've learned about deep neural networks and convolutional neural networks to classify traffic signs. You will train and validate a model so it can classify traffic sign images using the [German Traffic Sign Dataset](https://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model is trained, you will then try out your model on images of German traffic signs that you find on the web.
 
 
-
 #### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
-
 
 * Number of training examples = 34799
 * Number of testing examples = 12630
@@ -36,10 +34,8 @@ signs data set:
 
 #### 2. Include an exploratory visualization of the dataset.
 
-
 * Check the distributed of train, vaild and test.
 * I think it is ok for training.
-
 
 
 ---
@@ -97,14 +93,12 @@ Trainable params: 1,647,019
 Non-trainable params: 0
 
 
-
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 * I use the a minst model sample as base.
 * And change some parameter.
 * the result is ok for me.
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
-
 
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
